@@ -1,0 +1,19 @@
+h1 {
+    margin: 0 auto;
+    padding: 100px 0 ;
+}
+
+.container {
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.login {
+    margin-bottom: 1rem;
+}
+
+.login_btn {
+    text-align: center;
+    margin-top: 2rem;
+}

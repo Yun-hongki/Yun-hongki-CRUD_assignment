@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'new.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New page</title>
+</head>
+<body>
+    <h1>NEW Page</h1>
+    <div class="container">
+        <form action="{% url 'create' %}" method="POST">
+            {% csrf_token %}
+            <label for="title">Title</label>
+            <br>
+            <input name="title" id="title" type="text">
+            <div class="space"></div>
+            <label for="author">Author</label>
+            <br>
+            <input name="author" id="author" type="text">
+            <div class="space"></div>
+            <label for="content">Content</label>
+            <br>
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <div class="space"></div>
+            <label for="image">이미지</label>
+            <br>
+            <input type="file" name="image" id="name">
+            <div class="space"></div>
+            <input type="submit" value="작성하기">
+        </form>
+
+        <a href="{% url 'index' %}">목록으로</a>
+    </div>  
+</body>
+</html>

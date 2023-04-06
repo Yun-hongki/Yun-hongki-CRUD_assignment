@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charsset="UTF-8">
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Page</title>
+</head>
+<body>
+    <h1>Detail {{ blog.id }} Page</h1>
+
+    <h2>{{blog.title}}</h2>
+    <h3>{{blog.author}}</h3>
+    <p>{{blog.created_at}}</p>
+    {% if blog.image %}
+        <div class="img_frame">
+            <img src="{{blog.image.url}}" alt="BLOG IMAGE">
+        </div>
+    {% endif %}
+    <p>{{blog.content}}</p>
+
+    <a href="{% url 'edit' blog.id %}">수정하기</a>
+    <a href="{% url 'delete' blog.id %}">삭제하기</a>
+    <a href="{% url 'index' %}">목록으로</a>
+</body>
+</html>
